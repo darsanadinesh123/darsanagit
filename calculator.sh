@@ -1,11 +1,11 @@
-clear sum=0
-input="yes"
+c= 1
+while [ $c != 0 ]
+ do
 echo "enter first no:"
 read num1
 echo "enter second no:"
 read num2
- while [ $input = "yes" ]
- do
+ 
    echo "1.Addition"
    echo "2.Subtraction" 
    echo "3.Multiplication" 
@@ -19,7 +19,7 @@ read num2
          2)sum=`expr $num1 - $num2`
           echo "Sub = "$sum;;
          
-         3)sum=`expr $num1 * $num2`
+         3)sum=`expr $num1 \* $num2`
           echo "Mul = "$sum;;
          
          4)sum=`expr $num1 / $num2`
@@ -28,11 +28,9 @@ read num2
          *)echo "invalid choice";;
         esac
 
-        echo "do you want to continue?"
-        read input
-        if [ $input != "yes" ] then
-          exit
-        fi
+        echo "do you want to continue? 1- YES, 0-NO"
+        read c
+        
         done
 
 
